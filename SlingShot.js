@@ -5,13 +5,17 @@ class Slingshot{
             pointB: pointB,
             stiffness: 0.04,
             length: 1
-        }
+        };
+        this.bodyA = bodyA;
         this.sling = Constraint.create(options);
         this.pointB=pointB;
         World.add(world, this.sling);
 
     }
     //escreva o código para a função de ligar aqui
+    attach(){
+        this.sling.bodyA = this.bodyA;
+    }
 
     fly(){
         this.sling.bodyA =null;
@@ -19,12 +23,12 @@ class Slingshot{
     }
     display(){
         if(this.sling.bodyA){
-            var pointA = this.sling.bodyA.position;
-            var pointB = this.pointB;
-            
-            strokeWeight(4);
-            stroke("turquoise");
-            line(pointA.x, pointA.y, pointB.x, pointB.y);
+        var pointA = this.sling.bodyA.position;
+        var pointB = this.pointB;
+        
+        strokeWeight(4);
+        stroke("turquoise");
+        line(pointA.x, pointA.y, pointB.x, pointB.y);
         }
         }
     

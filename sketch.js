@@ -127,4 +127,7 @@ function mouseReleased(){
 function keyPressed(){
 //dê uma segunda chance ao jogador: conecte o polígono de volta ao estilingue quando espaço for pressionado
 //DICA: keyCode do espaço é 32
+if(keyCode === 32) {
+  slingShot.attach();
+}
 }
